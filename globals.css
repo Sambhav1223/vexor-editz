@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: #08070d;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  @apply bg-ink font-sans text-white antialiased;
+}
+
+::selection {
+  background: #8b5cf6;
+  color: #fff;
+}
+
+:focus-visible {
+  outline: 2px solid #a78bfa;
+  outline-offset: 3px;
+}
+
+section[id] {
+  scroll-margin-top: 4.5rem;
+}
+
+@layer components {
+  .wrap {
+    @apply mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-12;
+  }
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold transition-colors duration-200 disabled:cursor-not-allowed;
+  }
+  .btn-primary {
+    @apply btn bg-accent text-white hover:bg-[#7c4def] disabled:bg-white/10 disabled:text-muted;
+  }
+  .btn-ghost {
+    @apply btn border border-white/15 text-white hover:border-accent-soft/60 hover:bg-white/5;
+  }
+  .card {
+    @apply rounded-xl border border-white/10 bg-surface;
+  }
+}
